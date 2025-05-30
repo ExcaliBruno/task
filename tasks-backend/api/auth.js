@@ -3,7 +3,7 @@ const jwt = require('jwt-simple')
 const bcrypt = require('bcrypt-nodejs')
 
 module.exports = app => {
-    const sigin = async (req, res) => {
+    const signin = async (req, res) => {
         if(!req.body.email || !req.body.password){ 
             return res.status(400).send('Dados incompletos')
         }
@@ -32,5 +32,5 @@ module.exports = app => {
         }
     }
 
-    return { sigin }
+    return { signin }
 }
