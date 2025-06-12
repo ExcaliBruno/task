@@ -54,7 +54,7 @@ module.exports = app => {
         app.db('tasks')
             .where({id: req.params.id, userId: req.user.id})
             .first()
-            .them(task => {
+            .then(task => {
                 if(!task) {
                     const msg = `Task com id ${req.params.id}`
                     return res.status(400).send(msg)
